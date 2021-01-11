@@ -1,0 +1,81 @@
+@mobile: ~"only screen and (max-width: 667px)";
+@desktop: ~"only screen and (min-width: 668px)";
+
+* {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+	padding: 100px;
+	background:rgba(0, 0, 0, 0.05);
+
+	#inputsContainer {
+		min-height: 100px;
+		background: white;
+		padding: 50px;
+		cursor: text;
+		border-radius: 12px;
+	}
+
+	.pinyinInputContainer {	
+		// background: red;
+
+		.existingTextContainer {
+			display: inline-block;
+			height: 40px;
+			font-size: 28px;
+			vertical-align: top;
+			outline: none;
+			// background: red;
+		}
+
+		.pinyinInput {
+			display: inline-block;
+			vertical-align: top;
+			// background: blue;
+			margin-left: -1px;
+
+			.textField {
+				height: 40px;
+				display: inline-block;
+				font-size: 28px;
+				line-height: 40px;
+				outline: none;
+				vertical-align: top;
+				padding-left: 1px; // Make sure caret always has enough room to show up
+				text-decoration: underline;
+			}
+		}
+
+		.characterCandidatesContainer {
+			font-size: 20px;
+			padding-top: 20px;
+			position: absolute;
+
+			label {
+				display: inline-block;
+				background: rgba(0, 0, 0, 0.05);
+				border-radius: 8px;
+				padding: 4px 8px;
+				margin-right: 8px;
+				user-select: none;
+
+				&:hover {
+					cursor: pointer;
+					background: rgba(0, 0, 0, 0.1);
+				}
+
+				&:active {
+					cursor: pointer;
+					background: rgba(0, 0, 0, 0.15);
+				}
+
+				.number {
+					color: rgba(0, 0, 0, 0.5);
+					margin-right: 8px;
+				}
+			}
+		}
+	}
+}
